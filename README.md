@@ -1,21 +1,19 @@
-# DDPG-DQN-For-portfolio-optimization
+# DDPG-DQN For Portfolio Optimization
 
-Portfolio Optimization with Deep Learning project is a project which try to find optimal weights in every instrument in portfolio according to current last changes in the financial market. One of the critical jobs in finance is the movement and returns of the instruments in the portfolio within the expected time frame. The risk taken should be taken into account when making the weight distribution in the portfolio. Many finance experts evaluate modern portfolio theory and the movement of the instrument in the past years while distributing portfolios. Not only the movement of the instrument itself, but also the market conditions, the state of other instruments, and many indices related to the working and living conditions of people around the world. Although the distribution is created in the light of financial data, it is the people who make up the market and it is almost impossible for people to act without using their emotions.
+This project applies deep learning to portfolio optimization, aiming to find optimal asset weights based on recent changes in the financial market. Portfolio optimization is a critical task in finance, involving the strategic allocation of assets to achieve expected returns while managing risk. Traditionally, financial experts use modern portfolio theory and historical asset performance to guide their decisions. However, market conditions, correlations between assets, and broader economic indicators also play a significant role. Since human emotions often influence markets, relying solely on historical data can be limiting.
 
-As in many fields, deep learning can be used in finance to increase efficiency and to learn with the help of historical data. It is much more advantageous in terms of time and margin of error for a computer to analyze the big data that a person will examine and analyze.
+Deep learning offers a way to enhance decision-making by analyzing large datasets more efficiently than humans can. As a result, many investment firms have adopted machine learning to minimize human biases. For individual investors, deep learning can similarly provide a more systematic approach to portfolio optimization by leveraging historical data.
 
-At this point, many investment companies use machine learning to remove the human factor. However, there is no changing attitude for the individual investor. It is usual to have an efficient portfolio optimization with historical data thanks to deep learning. For that, two models were developed that analyzes how investment instruments should be distributed over time within a portfolio by implementing reinforcement learning techniques.
+In this project, two reinforcement learning models—Deep Q-Network (DQN) and Deep Deterministic Policy Gradient (DDPG)—are developed to determine how to distribute assets within a portfolio over time. The models learn from historical market data to optimize portfolio strategy based on the agent's experience. The assets considered include broad indices like S&P 500 and Nasdaq, currencies like USD and EUR, and commodities like gold (XAU). Given that DQN is not designed for continuous action spaces, it identifies which assets should be bought in the current state. An additional step then converts the DQN's discrete outputs into continuous values by calculating the Sharpe ratios of the selected assets.
 
-2 different model which based on DQN and DDPG reinforcement learning techniques used in this work. An agent learn from market historical data and optimize portfolio distribution strategy based on agent experience. Instruments used are more generic indices like S\&P and Nasdaq, currencies like USD and EUR, commodity which is XAU(Gold Price per ounce). Because DQN is not suitable for continous action space, unlike DDPG, it just try to find which of these instuments should be bought relative to current state. After intruments determined by DQN agent, one more step added to convert DQN agent's discrite outputs to continous ones. This added step simply calculates sharpe values of insturuments in DQN's output.
+## Results
 
-# Results
+**DDPG Results:**
 
-___DDPG result:___
+![DDPG Result](https://github.com/muhammetbozkurt/DDPG-DQN-For-portfolio-optimization/blob/main/results/ddpg_result.png)
 
-![Figure 1](https://github.com/muhammetbozkurt/DDPG-DQN-For-portfolio-optimization/blob/main/results/ddpg_result.png)
+**DQN Results:**
 
-___DQN result:___
+![DQN Result](https://github.com/muhammetbozkurt/DDPG-DQN-For-portfolio-optimization/blob/main/results/dqn_result.jpg)
 
-![Figure 2](https://github.com/muhammetbozkurt/DDPG-DQN-For-portfolio-optimization/blob/main/results/dqn_result.jpg)
-
-__Note:__ GT (Ground Truth) is mean of instruments
+**Note:** GT (Ground Truth) represents the mean performance of the assets.
